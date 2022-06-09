@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="AR">
+<!-- Basic -->
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Mobile Metas -->
+   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <!-- Site Metas -->
+   <title>PINCMA - CONTACTO</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Site Icons -->
+   <link rel="shortcut icon" href="images/PincmaShortCut.png" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="#" />
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="css/bootstrap.min.css" />
+   <!-- Pogo Slider CSS -->
+   <link rel="stylesheet" href="css/pogo-slider.min.css" />
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="css/style.css" />
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="css/responsive.css" />
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/custom.css" />
+</head>
+
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+   <!-- LOADER -->
+   <div id="preloader">
+      <div class="loader">
+         <img src="images/loader.gif" alt="#" />
+      </div>
+   </div>
+   <!-- END LOADER -->
+   <div class="wrapper">
+      <nav id="sidebar">
+         <div class="menu_section">
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+               <li><a href="contactenos.html">Contáctenos</a></li>
+               <li><a href="login.html">Login</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div id="content">
+         <!-- Start header -->
+         <header class="top-header">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-6">
+                     <div class="logo_main">
+                        <a href="index.html"><img src="images/Logo.png" /></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img
+                           src="images/menu_icon.png"></button>
+                  </div>
+               </div>
+            </div>
+         </header>
+         <!-- End header -->
+         <!-- section -->
+         <div class="section about_section layout_padding">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="full">
+                        <div class="heading_main text_align_center">
+                           <h2 class="margin-bottom_30"><strong class="small theme_color"></strong><br>Formularios de
+                              Login / Registro</h2>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <form runat="server">
+                     <div>
+                        <script type="text/javascript">
+                           var counter = 1;
+                           function RegistrarCliente() {
+                              if (document.getElementById('<%= txtNombre.ClientID %>').value == "") {
+                                 error('Debe ingresar un Nombre');
+                                 return;
+                              }
+                              if (document.getElementById('<%= txtApellido.ClientID %>').value == "") {
+                                 error('Debe ingresar un Apellido');
+                                 return;
+                              }
+                              if (document.getElementById('<%= txtFechaNacimiento.ClientID %>').value == "") {
+                                 error('Debe ingresar una fecha de nacimiento');
+                                 return;
+                              }
+                              if (document.getElementById('<%= ddlSexo.ClientID %>').value == "Seleccione una opción") {
+                                 error('Debe seleccionar una opción');
+                                 return;
+                              }
+                              if (document.getElementById('<%= txtTelefono.ClientID %>').value == "") {
+                                 error('Debe ingresar un teléfono');
+                                 return;
+                              }
+                              if (document.getElementById('<%= txtUsuario.ClientID %>').value == "") {
+                                 error('Debe ingresar un mail');
+                                 return;
+                              }
+                              if (document.getElementById('<%= txtPassword.ClientID %>').value == "") {
+                                 error('Debe ingresar una contraseña');
+                                 return;
+                              }
+                              if (document.getElementById('<%= txtPasswordConfirmation.ClientID %>').value == "") {
+                                 error('Debe ingresar la confirmación de la cotraseña');
+                                 return;
+                              }
+
+                              if (document.getElementById('<%= txtPassword.ClientID %>').value !=
+                                 document.getElementById('<%= txtPasswordConfirmation.ClientID %>').value) {
+                                 error('La contraseña y la confirmación no coinciden');
+                                 return;
+                              }
+                              confirmarRegistroCliente();
+                              //document.getElementById('<%= btnRegistro.ClientID %>').click();
+                           }
+
+                           function LoginCliente() {
+                              if (document.getElementById('<%= email.ClientID %>').value == "") {
+                                 error('Debe ingresar su usuario');
+                                 return;
+                              }
+                              if (document.getElementById('<%= password.ClientID %>').value == "") {
+                                 error('Debe ingresar su contraseña');
+                                 return;
+                              }
+                              document.getElementById('<%= btnIngresar.ClientID %>').click();
+                           }
+                        </script>
+                        <div id="ver"></div>
+                        <div>
+                           <div>
+                              <div>
+                                 <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
+                              </div>
+                              <div>
+                                 <div>
+                                    <div class="content">
+                                       <div class="division">
+                                          <div class="line l"></div>
+                                          <span></span>
+                                          <div class="line r"></div>
+                                       </div>
+                                       <div class="error"></div>
+                                       <div class="form loginBox">
+                                          <input runat="server" id="email" class="form-control" type="text"
+                                             placeholder="Email" name="email">
+                                          <input runat="server" id="password" class="form-control" type="password"
+                                             placeholder="Password" name="password">
+
+                                          <center>
+                                             <button type="button" onclick="LoginCliente()"
+                                                class="btn btn-success btn-register" id="login">Ingresar</button>
+                                          </center>
+                                          <asp:Button runat="server" ID="btnIngresar" type="button"
+                                             CssClass="btn btn-success font-weight-bold" Text="Ingresar"
+                                             Style="display: none" OnClick="btnIngresar_Click"></asp:Button>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div>
+                                    <div style="display: none;">
+                                       <div class="form">
+                                          <asp:TextBox class="form-control" runat="server" placeholder="Nombre"
+                                             ID="txtNombre" />
+                                          <asp:TextBox class="form-control" runat="server" placeholder="Apellido"
+                                             ID="txtApellido" />
+                                          <input type="date" class="form-control" runat="server" id="txtFechaNacimiento"
+                                             placeholder="Fecha de nacimiento" />
+                                          <br />
+                                          <asp:DropDownList runat="server" ID="ddlSexo" class="form-control">
+                                             <asp:ListItem Value="0" Text="Selecione una opción"></asp:ListItem>
+                                             <asp:ListItem Value="1" Text="Masculino"></asp:ListItem>
+                                             <asp:ListItem Value="2" Text="Femenino"></asp:ListItem>
+                                          </asp:DropDownList>
+                                          <br />
+                                          <asp:TextBox runat="server" placeholder="Teléfono" ID="txtTelefono"
+                                             class="form-control" />
+                                          <asp:TextBox runat="server" ID="txtUsuario" class="form-control"
+                                             placeholder="Nombre de usuario" />
+                                          <asp:TextBox runat="server" TextMode="Password" ID="txtPassword"
+                                             class="form-control" placeholder="Contraseña" autocomplete="off"
+                                             onkeyup="muestra_seguridad_clave(this.value, this.form, 1)" />
+                                          <asp:TextBox runat="server" TextMode="Password" ID="txtPasswordConfirmation"
+                                             class="form-control" placeholder="Repetir Contraseña" autocomplete="off"
+                                             onkeyup="muestra_seguridad_clave(this.value, this.form, 2)" />
+                                          <div class="col-md-12 col-sm-12">
+                                             <div class="w3-light-grey">
+                                                <div runat="server" id="barraSeguridad"
+                                                   class="w3-container w3-green w3-center" style="width: 0%"></div>
+                                             </div>
+                                             <center>
+                                                <b><i>
+                                                      <asp:Label runat="server" ID="seguridad" name="seguridad"
+                                                         Style="border: 0px; text-decoration: italic;" onfocus="blur()">
+                                                      </asp:Label>
+                                                      <%--<input disabled name="seguridad" type="text"
+                                                         style="border: 0px; background-color:white; text-decoration:italic;"
+                                                         onfocus="blur()">--%>
+                                                   </i></b>
+                                             </center>
+                                             <center>
+                                                <b><i>
+                                                      <asp:Label runat="server" ID="validacionBoth"
+                                                         Style="border: 0px; text-decoration: italic;" onfocus="blur()">
+                                                      </asp:Label>
+                                                   </i></b>
+                                             </center>
+                                          </div>
+                                          <div class="col-md-12 col-sm-12">
+                                             <center><i style="text-align: center; font-weight: bold">La contraseña
+                                                   deberá contener mayúscula, minúscula y números.</i></center>
+                                          </div>
+                                          <button type="button" onclick="RegistrarCliente()"
+                                             class="btn tn-default btn-register"
+                                             id="btnAgregarComidaAsociada">Crear</button>
+                                          <asp:Button runat="server" ID="btnRegistro" type="button"
+                                             CssClass="btn btn-success font-weight-bold" Text="Registrar"
+                                             Style="display: none" OnClick="btnCrear_Click"></asp:Button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div>
+                                 <div>
+                                    <span>Quieres
+
+                                       <a href="javascript: showRegisterForm();" style="color: blue">crear una
+                                          cuenta</a>
+                                       ?</span>
+                                    <span> / <a href="ForGet.aspx?val=2" style="color: red">Olvidaste tu
+                                          contraseña?</a></span>
+                                 </div>
+                                 <div class="forgot register-footer" style="display: none">
+                                    <span>Ya tienes una cuenta?</span>
+                                    <a href="javascript: showLoginForm();">Ingresa</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+
+            </div>
+         </div>
+         <!-- end section -->
+         <!-- section -->
+         <div class="section about_section layout_padding">
+            <div class="container">
+
+            </div>
+         </div>
+         <!-- end section -->
+         <!-- Start Footer -->
+
+         <!-- End Footer -->
+         <div class="footer_bottom">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <p class="crp">© Copyrights 2019 design by <a href="https://html.design"
+                           title="Free Website Templates">Free Website Templates</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+      <!-- ALL JS FILES -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- ALL PLUGINS -->
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <script src="js/jquery.pogo-slider.min.js"></script>
+      <script src="js/slider-index.js"></script>
+      <script src="js/smoothscroll.js"></script>
+      <script src="js/form-validator.min.js"></script>
+      <script src="js/contact-form-script.js"></script>
+      <script src="js/isotope.min.js"></script>
+      <script src="js/images-loded.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- End Google Map -->
+      <script>
+         $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+               $('#sidebar, #content').toggleClass('active');
+               $('.collapse.in').toggleClass('in');
+               $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+         });
+      </script>
+      <!-- google map js -->
+      <script
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+      <!-- end google map js -->
+</body>
+
+</html>
