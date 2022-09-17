@@ -198,7 +198,7 @@ button:focus {
     flex-wrap: wrap;
     width: 250px;
     height: auto;
-    -webkit-transform-style: preserve-3d;
+    /*-webkit-transform-style: preserve-3d;*/
 }
 
 .loader img {
@@ -1113,7 +1113,7 @@ button#sidebarCollapse {
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 	color: #fff;
-	float: left;
+	/*float:left;*/
 	width: 165px;
 	height: 45px;
 	text-align: center;
@@ -1352,8 +1352,6 @@ figure.effect-service:hover {
 .gallery-box {
 	padding: 70px 0px 120px;
 }
-
-.gallery-box ul {}
 
 .gallery-box ul li {
 	position: relative;
@@ -1890,8 +1888,6 @@ p.count-text {
 .dit-right a:hover {
 	color: #57cef8;
 }
-
-.contact-block {}
 
 .contact-block .form-group .form-control {
 	background: #333;
@@ -2713,7 +2709,6 @@ ul.bottom_menu li {
     background: #050000;
 }
 
-/** sidebar **/
 
 .navbar {
       padding: 15px 10px;
@@ -2736,9 +2731,7 @@ ul.bottom_menu li {
       border-bottom: 1px dashed #ddd;
       margin: 40px 0;
     }
-    /* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
+    
     
     #sidebar {
       width: 300px;
@@ -2854,9 +2847,7 @@ ul.bottom_menu li {
       background: #6d7fcc !important;
       color: #fff !important;
     }
-    /* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
+  
     
     #content {
       padding: 0;
@@ -2871,9 +2862,7 @@ ul.bottom_menu li {
     #content.active {
       width: 100%;
     }
-    /* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
+   
     
 .heading_main h2 strong.small {
     font-size: 30px;
@@ -3004,4 +2993,137 @@ video{
 	height: 100%;
 }
 
+.coin-color {
+font-weight: bold;
+color: #fff;
+}
 
+.coin-fondo {
+	background-color: #26324d;
+}
+
+main {
+	max-width: 250;
+	margin: 100px;
+}
+
+.coin-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 25px;
+}
+
+.coin {
+	width: 30px;
+	height: 20px;
+	border-radius: 50px;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	margin: 5px 5px 5px 0;
+}
+
+.bitcoin-item {
+	background-color: #58bc82;
+}
+
+.dollar-item {
+	opacity: 0;
+	background-color: #e34a6f;
+	animation-duration: .5s;
+    animation-fill-mode: forwards;
+	animation-name: opacity;
+}
+
+@keyframes opacity {
+	form{
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider {
+	background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+	border-radius: 34px;
+  }
+  
+  .slider.round:before {
+	border-radius: 50%;
+  }
+
+  table {
+	border-style: solid;
+	background-color: ;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  th, td {
+	padding: 20px;
+  }
+  thead {
+	background-color: #ef4023;
+	border-bottom: solid;
+	color: white;
+  }
+  tr:nth-child(even){
+	background-color: #ddd;
+  }
+  tr:hover td{
+	background-color: #fd7e14;
+	color: white
+  }
