@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="AR">
+<html lang="es">
 <!-- Basic -->
 
 <head>
@@ -46,6 +46,7 @@
             </ul>
          </div>
       </nav>
+      
       <div id="content">
          <!-- Start header -->
          <header class="top-header">
@@ -71,7 +72,7 @@
                   <div class="col-md-12">
                      <div class="full">
                         <div class="heading_main text_align_center">
-                           <h2 class="margin-bottom_30"><strong class="small theme_color"></strong><br>Formularios de
+                           <h2 class="margin-bottom_30"><strong class="small theme_color"></strong><br>Formulario
                               Login / Registro</h2>
                         </div>
                      </div>
@@ -115,7 +116,7 @@
                                  error('Debe ingresar la confirmación de la cotraseña');
                                  return;
                               }
-
+        
                               if (document.getElementById('<%= txtPassword.ClientID %>').value !=
                                  document.getElementById('<%= txtPasswordConfirmation.ClientID %>').value) {
                                  error('La contraseña y la confirmación no coinciden');
@@ -124,7 +125,7 @@
                               confirmarRegistroCliente();
                               //document.getElementById('<%= btnRegistro.ClientID %>').click();
                            }
-
+        
                            function LoginCliente() {
                               if (document.getElementById('<%= email.ClientID %>').value == "") {
                                  error('Debe ingresar su usuario');
@@ -140,10 +141,10 @@
                         <div id="ver"></div>
                         <div>
                            <div>
-                              <div>
+                              <!--<div>
                                  <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true">&times;</button>
-                              </div>
+                              </div>-->
                               <div>
                                  <div>
                                     <div class="content">
@@ -154,15 +155,17 @@
                                        </div>
                                        <div class="error"></div>
                                        <div class="form loginBox">
+                                          <input runat="server" id="nombre" class="form-control" type="text"
+                                             placeholder="Nombre" name="nombre"><br>
+                                          <input runat="server" id="apellido" class="form-control" type="text"
+                                             placeholder="Apellido" name="apellido"><br>
                                           <input runat="server" id="email" class="form-control" type="text"
-                                             placeholder="Email" name="email">
+                                             placeholder="Email" name="email"><br>
                                           <input runat="server" id="password" class="form-control" type="password"
-                                             placeholder="Password" name="password">
-
-                                          <center>
-                                             <button type="button" onclick="LoginCliente()"
-                                                class="btn btn-success btn-register" id="login">Ingresar</button>
-                                          </center>
+                                             placeholder="Password" name="password"><br>
+                                         <a href="billetera.html"><button type="button" onclick="LoginCliente()"
+                                                class="btn btn-success btn-register" id="login">Ingresar</button></a> 
+                                         
                                           <asp:Button runat="server" ID="btnIngresar" type="button"
                                              CssClass="btn btn-success font-weight-bold" Text="Ingresar"
                                              Style="display: none" OnClick="btnIngresar_Click"></asp:Button>
@@ -178,13 +181,11 @@
                                              ID="txtApellido" />
                                           <input type="date" class="form-control" runat="server" id="txtFechaNacimiento"
                                              placeholder="Fecha de nacimiento" />
-                                          <br />
                                           <asp:DropDownList runat="server" ID="ddlSexo" class="form-control">
                                              <asp:ListItem Value="0" Text="Selecione una opción"></asp:ListItem>
                                              <asp:ListItem Value="1" Text="Masculino"></asp:ListItem>
                                              <asp:ListItem Value="2" Text="Femenino"></asp:ListItem>
                                           </asp:DropDownList>
-                                          <br />
                                           <asp:TextBox runat="server" placeholder="Teléfono" ID="txtTelefono"
                                              class="form-control" />
                                           <asp:TextBox runat="server" ID="txtUsuario" class="form-control"
@@ -200,7 +201,7 @@
                                                 <div runat="server" id="barraSeguridad"
                                                    class="w3-container w3-green w3-center" style="width: 0%"></div>
                                              </div>
-                                             <center>
+                                           
                                                 <b><i>
                                                       <asp:Label runat="server" ID="seguridad" name="seguridad"
                                                          Style="border: 0px; text-decoration: italic;" onfocus="blur()">
@@ -209,18 +210,17 @@
                                                          style="border: 0px; background-color:white; text-decoration:italic;"
                                                          onfocus="blur()">--%>
                                                    </i></b>
-                                             </center>
-                                             <center>
+                                             
                                                 <b><i>
                                                       <asp:Label runat="server" ID="validacionBoth"
                                                          Style="border: 0px; text-decoration: italic;" onfocus="blur()">
                                                       </asp:Label>
                                                    </i></b>
-                                             </center>
+                                          
                                           </div>
                                           <div class="col-md-12 col-sm-12">
-                                             <center><i style="text-align: center; font-weight: bold">La contraseña
-                                                   deberá contener mayúscula, minúscula y números.</i></center>
+                                             <i style="text-align: center; font-weight: bold">La contraseña
+                                                   deberá contener mayúscula, minúscula y números.</i>
                                           </div>
                                           <button type="button" onclick="RegistrarCliente()"
                                              class="btn tn-default btn-register"
@@ -234,16 +234,16 @@
                               </div>
                               <div>
                                  <div>
-                                    <span>Quieres
-
-                                       <a href="javascript: showRegisterForm();" style="color: blue">crear una
-                                          cuenta</a>
-                                       ?</span>
-                                    <span> / <a href="ForGet.aspx?val=2" style="color: red">Olvidaste tu
+                                    <span>
+        
+                                       <a href="javascript: showRegisterForm();" style="color: blue">¿Quieres crear una
+                                          cuenta?</a>
+                                       </span>
+                                    <span> / <a href="ForGet.aspx?val=2" style="color: red">¿Olvidaste tu
                                           contraseña?</a></span>
                                  </div>
                                  <div class="forgot register-footer" style="display: none">
-                                    <span>Ya tienes una cuenta?</span>
+                                    <span>¿Ya tienes una cuenta?</span>
                                     <a href="javascript: showLoginForm();">Ingresa</a>
                                  </div>
                               </div>
@@ -252,7 +252,7 @@
                      </div>
                   </form>
                </div>
-
+        
             </div>
          </div>
          <!-- end section -->
@@ -270,12 +270,13 @@
             <div class="container">
                <div class="row">
                   <div class="col-12">
-                     <p class="crp">© Copyrights 2019 design by <a href="https://html.design"
+                     <p class="crp">© Copyrights 2022 design by <a href="https://html.design"
                            title="Free Website Templates">Free Website Templates</a></p>
                   </div>
                </div>
             </div>
          </div>
+      </div>
       </div>
       <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
       <!-- ALL JS FILES -->
