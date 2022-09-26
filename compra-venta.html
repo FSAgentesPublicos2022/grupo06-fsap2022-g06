@@ -1,215 +1,335 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Basic -->
+  <!-- Basic -->
 
-<head>
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- Mobile Metas -->
-   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-   <!-- Site Metas -->
-   <title>PINCMA - COMPRA/VENTA</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- Site Icons -->
-   <link rel="shortcut icon" href="images/PincmaShortCut.png" type="image/x-icon" />
-   <link rel="apple-touch-icon" href="#" />
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="css/bootstrap.min.css" />
-   <!-- Pogo Slider CSS -->
-   <link rel="stylesheet" href="css/pogo-slider.min.css" />
-   <!-- Site CSS -->
-   <link rel="stylesheet" href="css/style.css" />
-   <!-- Responsive CSS -->
-   <link rel="stylesheet" href="css/responsive.css" />
-   <!-- Custom CSS -->
-   <link rel="stylesheet" href="css/custom.css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <!-- Site Metas -->
+    <title>PINCMA - COMPRA/VENTA</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Site Icons -->
+    <link
+      rel="shortcut icon"
+      href="images/PincmaShortCut.png"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="#" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="css/pogo-slider.min.css" />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
 
-<body id="about" class="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-   <!-- LOADER -->
-   <div id="preloader">
+  <body
+    id="about"
+    class="inner_page"
+    data-spy="scroll"
+    data-target="#navbar-wd"
+    data-offset="98"
+  >
+    <!-- LOADER -->
+    <div id="preloader">
       <div class="loader">
-         <img src="images/loader.gif" alt="#" />
+        <img src="images/loader.gif" alt="#" />
       </div>
-   </div>
-   <!-- END LOADER -->
-   <div class="wrapper">
+    </div>
+    <!-- END LOADER -->
+    <div class="wrapper">
       <nav id="sidebar">
-         <div class="menu_section">
-            <ul>
-               <li><a href="billetera.html">Billetera</a></li>
-               <li><a href="compra-venta.html">Compra/venta</a></li>
-               <li><a href="index.html">Cerrar Sesi&oacute;n</a></li>
-            </ul>
-         </div>
+        <div class="menu_section">
+          <ul>
+            <li><a href="billetera.html">Billetera</a></li>
+            <li><a href="compra-venta.html">Compra/venta</a></li>
+            <li><a href="index.html">Cerrar Sesi&oacute;n</a></li>
+          </ul>
+        </div>
       </nav>
       <div id="content">
-         <!-- Start header -->
-         <header class="top-header">
-            <div class="container">
-               <div class="row">
-                  <div class="col-sm-6">
-                     <div class="logo_main">
-                        <a href="index.html"><img src="images/Logo.png" /></a>
-                     </div>
-                  </div>
-                  <div class="col-sm-6">
-                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img
-                           src="images/menu_icon.png"></button>
-                  </div>
-               </div>
+        <!-- Start header -->
+        <header class="top-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="logo_main">
+                  <a href="index.html"><img src="images/Logo.png" /></a>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <button
+                  type="button"
+                  id="sidebarCollapse"
+                  class="btn btn-info navbar-btn"
+                >
+                  <img src="images/menu_icon.png" />
+                </button>
+              </div>
             </div>
-         </header>
-         <!-- End header -->
-         <!-- Start Banner -->
-         <!-- section -->
-         <div class="section about_section layout_padding dash_bg">
-            <div class="container">
-               <div class="row">
+          </div>
+        </header>
+        <!-- End header -->
+        <!-- Start Banner -->
+        <!-- section -->
+        <div class="section about_section layout_padding dash_bg">
+          <div class="container">
+            <div class="row">
+              <!--<div class="col-md-12">-->
+              <div class="full">
+                <div class="heading_main">
+                  <h2></h2>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+              <div class="card col-xs-6 col-sm-6 col-md-6 col-lg-4 card-text">
+                <a href="javascript:void(0);" onclick="mostrarCompra();">
+                  <div class="full feature_box">
+                    <div class="full icon"></div>
+                    <div class="full">
+                      <h4>COMPRAR</h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="card col-xs-6 col-sm-6 col-md-6 col-lg-4">
+                <a href="javascript:void(0);" onclick="mostrarVenta();">
+                  <div class="full feature_box">
+                    <div class="full icon"></div>
+                    <div class="full" >
+                      <h4>VENDER</h4>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-8">
+                <table id="compra">
+                  <thead>
+                    <tr>
+                      <td>Nombre Usuario</td>
+                      <td>Valor USDT</td>
+                      <td>Monto</td>
+                      <td>Comprar</td>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Roberto</td>
+                    <td>32000</td>
+                    <td>00000</td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sofia</td>
+                    <td>28400</td>
+                    <td>00000</td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Alma</td>
+                    <td>31900</td>
+                    <td>00000</td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-8">
+                <table id="venta">
+                  <thead>
+                    <tr>
+                      <td>Nombre Usuario</td>
+                      <td>Valor USDT</td>
+                      <td>Monto</td>
+                      <td>Vender</td>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Andres</td>
+                    <td>25000</td>
+                    <td>00000</td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Micaela</td>
+                    <td>27000</td>
+                    <td>00000</td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Juan</td>
+                    <td>23257</td>
+                    <td>00000</td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+            </div>
+
+            <script type="text/javascript">
+              function mostrarCompra() {
+                document.getElementById('compra').style.display = 'block';
+                document.getElementById('venta').style.display = 'none';
+              }
+              function mostrarVenta() {
+                document.getElementById('venta').style.display = 'block';
+                document.getElementById('compra').style.display = 'none';
+              }
+             
+            </script>
+            <div class="section about_section layout_padding">
+              <div class="container">
+                <div class="row">
                   <div class="col-md-12">
-                     <div class="full">
-                        <div class="heading_main text_align_center">
-                           <h2></h2>
-                        </div>
-                     </div>
+                    <div class="full">
+                      <div class="heading_main text_align_center">
+                        <h2 class="margin-bottom_30">
+                          Historial de Transacciones
+                        </h2>
+                      </div>
+                    </div>
                   </div>
-               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1"></div>
-               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-               <div class="full feature_box">
-                  <div class="full icon">
-                  
-                  </div>
-                  <div class="full">
-                     <h4>COMPRA</h4>
-                  </div>
-                  <div class="full">
-                   <!-- Rounded switch -->
-                   <label class="switch">
-                     <input type="checkbox">
-                     <span class="slider round"></span>
-                   </label>
-                  </div>
-               </div>
+                </div>
+              </div>
             </div>
-                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
-                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-                     <div class="full feature_box">
-                        <div class="full icon">
-                       
-                        </div>
-                        <div class="full">
-                           <h4>VENTA</h4>
-                           
-                        </div>
-                        <div class="full">
-                        <!-- Rounded switch -->
-                        <label class="switch">
-                           <input type="checkbox">
-                           <span class="slider round"></span>
-                         </label>
-                        </div>
-                     </div>
-                  </div>
-               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1"></div>
-               </div>
-               <div class="row">
-                  <div class="section about_section layout_padding">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-md-12"><div class="full"><div class="heading_main text_align_center"><h2 class="margin-bottom_30">Historial  de  Transacciones</h2></div></div></div>
-                           </div>
-                     </div> 
-                  </div>
-               </div>
-<div class="row"> 
-   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
-   <div class="col-xs-6 col-sm 6 col-md-6 col-lg-8">
-   <table>
-      <thead>
-      <tr>
-         <td>N° de Transferncia</td>
-         <td>Fecha</td>
-         <td>Tipo de tranferencia</td>
-         <td>Cantidad</td>
-         <td>Conversi&oacute;n</td>
-         <td>Estado</td>
-      </tr>
-      </thead>
-      <tr>
-         <td>###</td>
-         <td>#/#/#</td>
-         <td>###</td>
-         <td>###</td>
-         <td>###</td>
-         <td>###</td>
-      </tr>
-      <tr>
-         <td>###</td>
-         <td>#/#/#</td>
-         <td>###</td>
-         <td>###</td>
-         <td>###</td>
-         <td>###</td>
-      </tr>
-      <tr>
-         <td>###</td>
-         <td>#/#/#</td>
-         <td>###</td>
-         <td>###</td>
-         <td>###</td>
-         <td>###</td>
-      </tr>
-   </table>
-</div>
-<div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
-</div>
 
-         </div>
-       </div>
-  </div> 
-</div>  
-         <div class="footer_bottom">
-            <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <p class="crp">© Copyrights 2022 creado por <a href="#" title="Free Website Templates">PINCMA</a>
-                     </p>
-                  </div>
-               </div>
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+              <div class="col-xs-6 col-sm 6 col-md-6 col-lg-8">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>N° de Transferncia</td>
+                      <td>Fecha</td>
+                      <td>Tipo de tranferencia</td>
+                      <td>Cantidad</td>
+                      <td>Conversi&oacute;n</td>
+                      <td>Estado</td>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>00000</td>
+                    <td>00/00/00</td>
+                    <td>00000</td>
+                    <td>00000</td>
+                    <td>00000</td>
+                    <td>00000</td>
+                  </tr>
+                  <tr>
+                    <td>00000</td>
+                    <td>00/00/00</td>
+                    <td>00000</td>
+                    <td>00000</td>
+                    <td>00000</td>
+                    <td>00000</td>
+                  </tr>
+                  <tr>
+                    <td>00000</td>
+                    <td>00/00/00</td>
+                    <td>00000</td>
+                    <td>00000</td>
+                    <td>00000</td>
+                    <td>00000</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
             </div>
-         </div>
+          </div>
+        </div>
       </div>
-      <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
-      <!-- ALL JS FILES -->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <!-- ALL PLUGINS -->
-      <script src="js/jquery.magnific-popup.min.js"></script>
-      <script src="js/jquery.pogo-slider.min.js"></script>
-      <script src="js/slider-index.js"></script>
-      <script src="js/smoothscroll.js"></script>
-      <script src="js/form-validator.min.js"></script>
-      <script src="js/contact-form-script.js"></script>
-      <script src="js/isotope.min.js"></script>
-      <script src="js/images-loded.min.js"></script>
-      <script src="js/custom.js"></script>
-      <!-- End Google Map -->
-      <script>
-         $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-               $('#sidebar, #content').toggleClass('active');
-               $('.collapse.in').toggleClass('in');
-               $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-         });
-      </script>
-      <!-- google map js -->
-      <script
-         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
-      <!-- end google map js -->
-</body>
+    </div>
 
+    <div class="footer_bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="crp">
+              © Copyrights 2022 creado por
+              <a href="#" title="Free Website Templates">PINCMA</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" id="scroll-to-top" class="hvr-radial-out"
+      ><i class="fa fa-angle-up"></i
+    ></a>
+    <!-- ALL JS FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.pogo-slider.min.js"></script>
+    <script src="js/slider-index.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- End Google Map -->
+    <script>
+      $(document).ready(function () {
+        $("#sidebarCollapse").on("click", function () {
+          $("#sidebar, #content").toggleClass("active");
+          $(".collapse.in").toggleClass("in");
+          $("a[aria-expanded=true]").attr("aria-expanded", "false");
+        });
+      });
+    </script>
+    <!-- google map js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+    <!-- end google map js -->
+  </body>
 </html>
