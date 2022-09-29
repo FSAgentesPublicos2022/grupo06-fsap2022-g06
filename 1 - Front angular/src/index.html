@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>PINCMA</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+  <link rel="shortcut icon" href="./assets/images/PincmaShortCut.png" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="#" />
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+   <!-- Pogo Slider CSS -->
+   <link rel="stylesheet" href="./assets/css/pogo-slider.min.css" />
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="./assets/css/style.css" />
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="./assets/css/responsive.css" />
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="./assets/css/custom.css" />
+   
+</head>
+
+<body>
+  <app-root></app-root>
+
+  <script src="./assets/js/jquery.min.js"></script>
+      <script src="./assets/js/popper.min.js"></script>
+      <script src="./assets/js/bootstrap.min.js"></script>
+      <!-- ALL PLUGINS -->
+      <script src="./assets/js/jquery.magnific-popup.min.js"></script>
+      <script src="./assets/js/jquery.pogo-slider.min.js"></script>
+      <script src="./assets/js/slider-index.js"></script>
+      <script src="./assets/js/smoothscroll.js"></script>
+      <script src="./assets/js/form-validator.min.js"></script>
+      <script src="./assets/js/contact-form-script.js"></script>
+      <script src="./assets/js/isotope.min.js"></script>
+      <script src="./assets/js/images-loded.min.js"></script>
+      <script src="./assets/js/custom.js"></script>
+      <!-- End Google Map -->
+      <script>
+         $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+               $('#sidebar, #content').toggleClass('active');
+               $('.collapse.in').toggleClass('in');
+               $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+         });
+      </script>
+      <!-- google map js -->
+      <script
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+</body>
+</html>
