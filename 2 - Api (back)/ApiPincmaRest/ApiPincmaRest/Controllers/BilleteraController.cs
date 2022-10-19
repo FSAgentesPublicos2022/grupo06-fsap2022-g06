@@ -14,10 +14,16 @@ namespace ApiPincmaRest.Controllers
             this.context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<Billetera>>> Get()
+        [HttpGet ("obtener/{mail}")]
+        public async Task<int> Get(string mail)
         {
-            return await context.Billetera.ToListAsync();
+            int res = 0;
+            res =(from b in context.Billetera
+                          join c in context.Cuenta on b.idCuenta equals c.idCuenta
+                          join u in context.Usuario on c.mail equals u.mail
+                          where u.mail == mail
+                          select b.idBilletera).Single();
+            return res;
         }
     }
 }

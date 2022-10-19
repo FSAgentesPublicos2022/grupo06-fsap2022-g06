@@ -68,6 +68,11 @@ namespace ApiPincmaRest
                 opciones.AddPolicy("EsAdmin", politica => politica.RequireClaim("esAdmin"));
             });
             services.AddDataProtection();
+
+            services.AddCors(options => options.AddPolicy("AllowWebApp",
+                                builder => builder.AllowAnyOrigin()
+                                                  .AllowAnyHeader()
+                                                  .AllowAnyMethod()));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -77,6 +82,8 @@ namespace ApiPincmaRest
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors("AllowWebApp");
 
             app.UseHttpsRedirection();
 

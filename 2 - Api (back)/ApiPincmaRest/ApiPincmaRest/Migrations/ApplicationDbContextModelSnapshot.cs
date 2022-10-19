@@ -191,6 +191,45 @@ namespace ApiPincmaRest.Migrations
                     b.ToTable("Logs");
                 });
 
+            modelBuilder.Entity("ApiPincmaRest.Models.Oferta", b =>
+                {
+                    b.Property<int>("idOferta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idOferta"), 1L, 1);
+
+                    b.Property<int>("cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idBilletera")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idCrypto")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idEstado")
+                        .HasColumnType("int");
+
+                    b.Property<string>("nombreCrypto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("nombreUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("precioP")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("precioU")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("idOferta");
+
+                    b.ToTable("Ofertas");
+                });
+
             modelBuilder.Entity("ApiPincmaRest.Models.Operacion", b =>
                 {
                     b.Property<int>("idOperacion")
@@ -382,7 +421,7 @@ namespace ApiPincmaRest.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("fechaCreacion")
+                    b.Property<DateTime?>("fechaCreacion")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("idEstado")

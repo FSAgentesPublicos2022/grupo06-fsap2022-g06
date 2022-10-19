@@ -38,6 +38,7 @@ namespace ApiPincmaRest
         public DbSet<TipoDocumento> TipoDocumento { get; set; }
         public DbSet<TipoOperacion> TipoOperacion { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Oferta> Ofertas { get; set; }    
 
 
     }
