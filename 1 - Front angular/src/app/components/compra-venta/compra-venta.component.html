@@ -1,0 +1,208 @@
+<div class="wrapper">
+    
+    <div id="content">
+    
+      <div class="section about_section layout_padding dash_bg">
+        <div class="container">
+          <div class="row">
+            <!--<div class="col-md-12">-->
+            <div class="full">
+              <div class="heading_main">
+                <h2></h2>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+            <div class="card col-xs-6 col-sm-6 col-md-6 col-lg-4 card-text">
+              <a href="javascript:void(0);" onclick="mostrarCompra();">
+                <div class="full feature_box">
+                  <div class="full icon"></div>
+                  <div class="full">
+                    <h4>COMPRAR</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="card col-xs-6 col-sm-6 col-md-6 col-lg-4">
+              <a href="javascript:void(0);" onclick="mostrarVenta();">
+                <div class="full feature_box">
+                  <div class="full icon"></div>
+                  <div class="full" >
+                    <h4>VENDER</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-8">
+              <table id="compra">
+                <thead>
+                  <tr>
+                    <td>Nombre Usuario</td>
+                    <td>Valor USDT</td>
+                    <td>Monto</td>
+                    <td>Comprar</td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>Roberto</td>
+                  <td>32000</td>
+                  <td>00000</td>
+                  <td>
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sofia</td>
+                  <td>28400</td>
+                  <td>00000</td>
+                  <td>
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Alma</td>
+                  <td>31900</td>
+                  <td>00000</td>
+                  <td>
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-8">
+              <table id="venta">
+                <thead>
+                  <tr>
+                    <td>Nombre Usuario</td>
+                    <td>Valor USDT</td>
+                    <td>Monto</td>
+                    <td>Vender</td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>Andres</td>
+                  <td>25000</td>
+                  <td>00000</td>
+                  <td>
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Micaela</td>
+                  <td>27000</td>
+                  <td>00000</td>
+                  <td>
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Juan</td>
+                  <td>23257</td>
+                  <td>00000</td>
+                  <td>
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+          </div>
+
+          <script type="text/javascript">
+            function mostrarCompra() {
+              document.getElementById('compra').style.display = 'block';
+              document.getElementById('venta').style.display = 'none';
+            }
+            function mostrarVenta() {
+              document.getElementById('venta').style.display = 'block';
+              document.getElementById('compra').style.display = 'none';
+            }
+           
+          </script>
+          <div class="section about_section layout_padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="full">
+                    <div class="heading_main text_align_center">
+                      <h2 class="margin-bottom_30">
+                        Historial de Transacciones
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+            <div class="col-xs-6 col-sm 6 col-md-6 col-lg-8">
+              <table>
+                <thead>
+                  <tr>
+                    <td>N° de Transferncia</td>
+                    <td>Fecha</td>
+                    <td>Tipo de tranferencia</td>
+                    <td>Cantidad</td>
+                    <td>Conversi&oacute;n</td>
+                    <td>Estado</td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>00000</td>
+                  <td>00/00/00</td>
+                  <td>00000</td>
+                  <td>00000</td>
+                  <td>00000</td>
+                  <td>00000</td>
+                </tr>
+                <tr>
+                  <td>00000</td>
+                  <td>00/00/00</td>
+                  <td>Venta</td>
+                  <td>00000</td>
+                  <td>00000</td>
+                  <td>00000</td>
+                </tr>
+                <tr>
+                  <td>00000</td>
+                  <td>00/00/00</td>
+                  <td>Compra</td>
+                  <td>00000</td>
+                  <td>00000</td>
+                  <td>00000</td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

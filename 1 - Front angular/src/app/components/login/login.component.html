@@ -1,0 +1,347 @@
+<div class="section about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="full">
+            <div class="heading_main text_align_center">
+              <h2 class="margin-bottom_30">
+                <strong class="small theme_color"></strong
+                ><br />Formulario Login / Registro
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+            <div class="col-xs-6 col-sm 6 col-md-6 col-lg-8">
+        <form runat="server">
+          <div>
+            <script type="text/javascript">
+              var counter = 1;
+              function RegistrarCliente() {
+                if (
+                  document.getElementById("<%= txtNombre.ClientID %>")
+                    .value == ""
+                ) {
+                  error("Debe ingresar un Nombre");
+                  return;
+                }
+                if (
+                  document.getElementById("<%= txtApellido.ClientID %>")
+                    .value == ""
+                ) {
+                  error("Debe ingresar un Apellido");
+                  return;
+                }
+                if (
+                  document.getElementById(
+                    "<%= txtFechaNacimiento.ClientID %>"
+                  ).value == ""
+                ) {
+                  error("Debe ingresar una fecha de nacimiento");
+                  return;
+                }
+                if (
+                  document.getElementById("<%= ddlSexo.ClientID %>")
+                    .value == "Seleccione una opción"
+                ) {
+                  error("Debe seleccionar una opción");
+                  return;
+                }
+                if (
+                  document.getElementById("<%= txtTelefono.ClientID %>")
+                    .value == ""
+                ) {
+                  error("Debe ingresar un teléfono");
+                  return;
+                }
+                if (
+                  document.getElementById("<%= txtUsuario.ClientID %>")
+                    .value == ""
+                ) {
+                  error("Debe ingresar un mail");
+                  return;
+                }
+                if (
+                  document.getElementById("<%= txtPassword.ClientID %>")
+                    .value == ""
+                ) {
+                  error("Debe ingresar una contraseña");
+                  return;
+                }
+                if (
+                  document.getElementById(
+                    "<%= txtPasswordConfirmation.ClientID %>"
+                  ).value == ""
+                ) {
+                  error("Debe ingresar la confirmación de la cotraseña");
+                  return;
+                }
+
+                if (
+                  document.getElementById("<%= txtPassword.ClientID %>")
+                    .value !=
+                  document.getElementById(
+                    "<%= txtPasswordConfirmation.ClientID %>"
+                  ).value
+                ) {
+                  error("La contraseña y la confirmación no coinciden");
+                  return;
+                }
+                confirmarRegistroCliente();
+                //document.getElementById('<%= btnRegistro.ClientID %>').click();
+              }
+
+              function LoginCliente() {
+                if (
+                  document.getElementById("<%= email.ClientID %>")
+                    .value == ""
+                ) {
+                  error("Debe ingresar su usuario");
+                  return;
+                }
+                if (
+                  document.getElementById("<%= password.ClientID %>")
+                    .value == ""
+                ) {
+                  error("Debe ingresar su contraseña");
+                  return;
+                }
+                document
+                  .getElementById("<%= btnIngresar.ClientID %>")
+                  .click();
+              }
+            </script>
+            <div id="ver"></div>
+            <div>
+              <div>
+              
+                <div>
+                  <div>
+                    <div class="content">
+                      <div class="division">
+                        <div class="line l"></div>
+                        <span></span>
+                        <div class="line r"></div>
+                      </div>
+                      <div class="error"></div>
+                      <div class="form loginBox">
+                        <input
+                          runat="server"
+                          id="nombre"
+                          class="form-control"
+                          type="text"
+                          placeholder="Nombre"
+                          name="nombre"
+                        /><br />
+                        <input
+                          runat="server"
+                          id="apellido"
+                          class="form-control"
+                          type="text"
+                          placeholder="Apellido"
+                          name="apellido"
+                        /><br />
+                        <input
+                          runat="server"
+                          id="email"
+                          class="form-control"
+                          type="text"
+                          placeholder="Email"
+                          name="email"
+                        /><br />
+                        <input
+                          runat="server"
+                          id="password"
+                          class="form-control"
+                          type="password"
+                          placeholder="Password"
+                          name="password"
+                        /><br />
+                        <a href="./billetera.html"
+                          ><button
+                            type="button"
+                            onclick="LoginCliente()"
+                            class="btn btn-success btn-register"
+                            id="login"
+                          >
+                            Ingresar
+                          </button></a
+                        >
+
+                        <input type="button" 
+                          runat="server"
+                          id="btnIngresar"
+                          CssClass="btn btn-success font-weight-bold"
+                          Text="Ingresar"
+                          Style="display: none"
+                          OnClick="btnIngresar_Click"
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="display: none">
+                      <div class="form">
+                        <input type="text"
+                          class="form-control"
+                          runat="server"
+                          placeholder="Nombre"
+                          id="txtNombre"
+                        />
+                        <input type="text" 
+                          class="form-control"
+                          runat="server"
+                          placeholder="Apellido"
+                          ID="txtApellido"
+                        />
+                        <input
+                          type="date"
+                          class="form-control"
+                          runat="server"
+                          id="txtFechaNacimiento"
+                          placeholder="Fecha de nacimiento"
+                        />
+                        <select 
+                          runat="server"
+                          id="ddlSexo"
+                          class="form-control"
+                        ></select>
+                          <!--<asp:ListItem>
+                            Value="0"
+                            Text="Selecione una opción"
+                          ></asp:ListItem>
+                          <asp:ListItem
+                            Value="1"
+                            Text="Masculino"
+                          ></asp:ListItem>
+                          <asp:ListItem
+                            Value="2"
+                            Text="Femenino"
+                          ></asp:ListItem>-->
+                       
+                        <input type="text" 
+                          runat="server"
+                          placeholder="Teléfono"
+                          id="txtTelefono"
+                          class="form-control"
+                        />
+                        <input type="text" 
+                          runat="server"
+                          id="txtUsuario"
+                          class="form-control"
+                          placeholder="Nombre de usuario"
+                        />
+                        <input type="text" 
+                          runat="server"
+                          TextMode="Password"
+                          id="txtPassword"
+                          class="form-control"
+                          placeholder="Contraseña"
+                          autocomplete="off"
+                          onkeyup="muestra_seguridad_clave(this.value, this.form, 1)"
+                        />
+                        <input type="text" 
+                          runat="server"
+                          TextMode="Password"
+                          id="txtPasswordConfirmation"
+                          class="form-control"
+                          placeholder="Repetir Contraseña"
+                          autocomplete="off"
+                          onkeyup="muestra_seguridad_clave(this.value, this.form, 2)"
+                        />
+                        <div class="col-md-12 col-sm-12">
+                          <div class="w3-light-grey">
+                            <div
+                              runat="server"
+                              id="barraSeguridad"
+                              class="w3-container w3-green w3-center"
+                              style="width: 0%"
+                            ></div>
+                          </div>
+
+                          <b
+                            ><i>
+                              <label 
+                                runat="server"
+                                id="seguridad"
+                                name="seguridad"
+                                Style="border: 0px; text-decoration: italic;"
+                                onfocus="blur()"
+                              >
+                            </label>
+                              <%--<input
+                                disabled
+                                name="seguridad"
+                                type="text"
+                                style="
+                                  border: 0px;
+                                  background-color: white;
+                                  text-decoration: italic;
+                                "
+                                onfocus="blur()"
+                              />--%>
+                            </i></b>
+
+                          <b><i>
+                              <label
+                                runat="server"
+                                id="validacionBoth"
+                                Style="border: 0px; text-decoration: italic;"
+                                onfocus="blur()">
+                              </label>
+                              </i></b>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <i style="text-align: center; font-weight: bold"
+                            >La contraseña deberá contener mayúscula,
+                            minúscula y números.</i
+                          >
+                        </div>
+                        <button
+                          type="button"
+                          onclick="RegistrarCliente()"
+                          class="btn tn-default btn-register"
+                          id="btnAgregarComidaAsociada"
+                        >
+                          Crear
+                    </button>
+                        <input type="text"
+                          runat="server"
+                          id="btnRegistro"
+                          CssClass="btn btn-success font-weight-bold"
+                          Text="Registrar"
+                          Style="display: none"
+                          OnClick="btnCrear_Click"/>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <span>
+                      <a
+                        href="javascript: showRegisterForm();"
+                        style="color: blue"
+                        >¿Quieres crear una cuenta?</a>
+                    </span>
+                    <span><a href="ForGet.aspx?val=2" style="color: red"
+                        >¿Olvidaste tu contraseña?</a></span>
+                  </div>
+                  <div
+                    class="forgot register-footer"
+                    style="display: none">
+                    <span>¿Ya tienes una cuenta?</span>
+                    <a href="javascript: showLoginForm();">Ingresa</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2"></div>
+      </div>
+    </div>
+  </div>
