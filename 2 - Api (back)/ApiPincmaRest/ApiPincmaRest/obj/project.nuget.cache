@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z2OyI4mHlkhKrJajOW50nDt+3TrqrUhjq1RurN42pfLOtzoEQr81i9cZtAB7/0v+K4SM64ofBHwXGCvqx+ys0g==",
+  "dgSpecHash": "005Jjjm17eMrQcLZ6Df83TQX9pl4YODzSnEw/Z6OxBDOCsSJ9Xy0ULn3wF0V5WPijpxsHUkOBN7f3N7RSNuh3g==",
   "success": true,
-  "projectFilePath": "D:\\2.3 - GOBIERNO CBA\\Billetera proyectos\\ApiPincmaRest\\ApiPincmaRest\\ApiPincmaRest.csproj",
+  "projectFilePath": "C:\\Users\\rnico\\Desktop\\Git de grupo 6\\grupo06-fsap2022-g06\\2 - Api (back)\\ApiPincmaRest\\ApiPincmaRest\\ApiPincmaRest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rnico\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\rnico\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

@@ -11,7 +11,7 @@ namespace ApiPincmaRest.Models
         public string apellido { get; set; }
         public string documento { get; set; }
         public int idEstado { get; set; }
-        public DateTime fechaCreacion { get; set; }
+        public DateTime ? fechaCreacion { get; set; }
         public int idTipoDocumento { get; set; }
     }
 }
