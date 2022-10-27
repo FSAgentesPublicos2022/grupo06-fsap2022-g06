@@ -98,6 +98,80 @@ namespace ApiPincmaRest.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPut("editarorigen/{idBilletera:int}/{idCrypto:int}/{cantidad:int}")]
+        public async Task<ActionResult> PutO(int idBilletera, int idCrypto, int cantidad)
+        {
+            try
+            {
+                var res = (from cb in context.cryptoXBilletera
+                           where cb.idBilletera == idBilletera &&
+                           cb.idCrypto == idCrypto
+                           select cb).FirstOrDefault();
+                if (res != null)
+                {
+                    res.cantidad = res.cantidad - cantidad;
+                    context.Update(res);
+                    await context.SaveChangesAsync();
+                    return Ok(new { message = "Las existencias de la billetera se actualizaron con éxito" });
+
+                }
+                else
+                {
+                    return NotFound();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPut("editardestino/{idBilletera:int}/{idCrypto:int}/{cantidad:int}")]
+        public async Task<ActionResult> PutD(int idBilletera, int idCrypto, int cantidad)
+        {
+            try
+            {
+                var res = (from cb in context.cryptoXBilletera
+                           where cb.idBilletera == idBilletera &&
+                           cb.idCrypto == idCrypto
+                           select cb).FirstOrDefault();
+                if (res != null)
+                {
+                    res.cantidad = res.cantidad + cantidad;
+                    context.Update(res);
+                    await context.SaveChangesAsync();
+                    return Ok(new { message = "Las existencias de la billetera se actualizaron con éxito" });
+
+                }
+                else
+                {
+                    return NotFound();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost("registrar")]
+        public async Task<IActionResult> Post([FromBody] CryptoBilleteraDTo cryptoBilletera)
+        {
+            try
+            {
+
+                context.Add(cryptoBilletera);
+                await context.SaveChangesAsync();
+                return Ok(cryptoBilletera);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
  

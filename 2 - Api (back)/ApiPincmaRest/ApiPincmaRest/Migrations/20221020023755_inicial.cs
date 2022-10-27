@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ApiPincmaRest.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -124,12 +124,33 @@ namespace ApiPincmaRest.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Ofertas",
+                columns: table => new
+                {
+                    idOferta = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    idBilletera = table.Column<int>(type: "int", nullable: false),
+                    idCrypto = table.Column<int>(type: "int", nullable: false),
+                    nombreCrypto = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    nombreUsuario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    cantidad = table.Column<int>(type: "int", nullable: false),
+                    precioU = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    precioP = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    idEstado = table.Column<int>(type: "int", nullable: false),
+                    comentario = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ofertas", x => x.idOferta);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Operacion",
                 columns: table => new
                 {
                     idOperacion = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    fechaOperacion = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    fechaOperacion = table.Column<DateTime>(type: "datetime2", nullable: true),
                     idTipoOperacion = table.Column<int>(type: "int", nullable: false),
                     idEstado = table.Column<int>(type: "int", nullable: false),
                     idBilleteraOrigen = table.Column<int>(type: "int", nullable: false),
@@ -137,7 +158,9 @@ namespace ApiPincmaRest.Migrations
                     idCrypto = table.Column<int>(type: "int", nullable: false),
                     cantidad = table.Column<int>(type: "int", nullable: false),
                     precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    operacionFinalizada = table.Column<bool>(type: "bit", nullable: false)
+                    operacionFinalizada = table.Column<bool>(type: "bit", nullable: false),
+                    comentario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    idOferta = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -251,7 +274,7 @@ namespace ApiPincmaRest.Migrations
                     apellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     documento = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     idEstado = table.Column<int>(type: "int", nullable: false),
-                    fechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    fechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: true),
                     idTipoDocumento = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -282,6 +305,9 @@ namespace ApiPincmaRest.Migrations
 
             migrationBuilder.DropTable(
                 name: "Logs");
+
+            migrationBuilder.DropTable(
+                name: "Ofertas");
 
             migrationBuilder.DropTable(
                 name: "Operacion");

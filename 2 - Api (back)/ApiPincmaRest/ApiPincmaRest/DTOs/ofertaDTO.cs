@@ -13,5 +13,6 @@
         public decimal precioP { get; set; }
         public int idEstado { get; set; }
         public string descripcion { get; set; }
+        public string ? comentario { get; set; }
     }
 }

@@ -14,5 +14,6 @@ namespace ApiPincmaRest.Models
         public decimal precioU { get; set; }
         public decimal precioP { get; set; }
         public int idEstado { get; set; }
+        public string comentario { get; set; }
     }
 }
