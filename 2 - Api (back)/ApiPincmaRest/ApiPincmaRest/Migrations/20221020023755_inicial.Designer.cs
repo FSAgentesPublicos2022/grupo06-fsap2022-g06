@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiPincmaRest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221017063929_Oferta")]
-    partial class Oferta
+    [Migration("20221020023755_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -204,6 +204,10 @@ namespace ApiPincmaRest.Migrations
                     b.Property<int>("cantidad")
                         .HasColumnType("int");
 
+                    b.Property<string>("comentario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("idBilletera")
                         .HasColumnType("int");
 
@@ -243,19 +247,26 @@ namespace ApiPincmaRest.Migrations
                     b.Property<int>("cantidad")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("fechaOperacion")
+                    b.Property<string>("comentario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("fechaOperacion")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("idBilleteraDestino")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idBilleteraOrigen")
+                        .HasColumnType("int");
 
                     b.Property<int>("idCrypto")
                         .HasColumnType("int");
 
-                    b.Property<int>("idCuentaDestino")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idCuentaOrigen")
-                        .HasColumnType("int");
-
                     b.Property<int>("idEstado")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idOferta")
                         .HasColumnType("int");
 
                     b.Property<int>("idTipoOperacion")

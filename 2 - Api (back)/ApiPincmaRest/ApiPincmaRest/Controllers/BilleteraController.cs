@@ -25,5 +25,35 @@ namespace ApiPincmaRest.Controllers
                           select b.idBilletera).Single();
             return res;
         }
+
+
+        [HttpGet("verId/{mail}")]
+        public async Task<int> GetId(string mail)
+        {
+            int res = 0;
+            res = (from c in context.Cuenta
+                   join u in context.Usuario on c.mail equals u.mail
+                   join b in context.Billetera on c.idCuenta equals b.idCuenta
+                   where u.mail == mail
+                   select b.idBilletera).Single();
+            return res;
+        }
+
+
+        [HttpPost("registrar")]
+        public async Task<IActionResult> Post([FromBody] Billetera billetera)
+        {
+            try
+            {
+
+                context.Add(billetera);
+                await context.SaveChangesAsync();
+                return Ok(billetera);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
